@@ -4,3 +4,16 @@ body{
 #Title{
     text-align: center;
 }
+.box{
+    width: 75px;
+    height: 75px;
+    border: 2px solid;
+    cursor: pointer;
+}
+#Container{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    width: 225px;
+    margin: auto;
+    text-align: center;
+}
