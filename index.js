@@ -1,7 +1,9 @@
 const statusText = document.querySelector("statusText");
 
 function initializeGame(){
+    button = document.querySelector("startBtn");
     statusText.textContent = `${playerOne}'s turn`;
+    startBtn.addEventListener("click", initializeGame);
 }
 initializeGame();
 
@@ -27,3 +29,4 @@ function winner(){
         return (`${playerTwo} has won the game!`);
     } 
 }
+winner();
