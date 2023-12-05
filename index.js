@@ -19,3 +19,11 @@ const winConditions = [
     [0,4,8],
     [2,4,6],   
 ]
+
+function winner(){
+    if (playerOne === winConditions){
+        return (`${playerOne} has won the game!`);
+    } else if (playerTwo === winConditions){
+        return (`${playerTwo} has won the game!`);
+    } 
+}
