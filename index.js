@@ -30,3 +30,9 @@ function winner(){
     } 
 }
 winner();
+
+function endGame(){
+    button1 = document.querySelector("restartBtn");
+    restartBtn.addEventListener("click", endGame);
+}
+endGame();
