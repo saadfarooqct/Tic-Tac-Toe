@@ -14,15 +14,19 @@ function initializeGame() {
 }
 
 function playerTurn() {
-  if (currentPlayer === playerOne) {
-    currentPlayer = playerTwo;
-  } else {
-    currentPlayer = playerOne;
+    if (currentPlayer === playerOne) {
+        currentPlayer = playerTwo;
+    } else {
+        currentPlayer = playerOne;
   }
 }
 
-function letterDisplay(){
-
+function letterDisplay() {
+    if (currentPlayer === playerOne){
+        playerOne === this.getAttribute("X");
+    } else if (currentPlayer = playerTwo){
+        playerTwo === this.getAttribute("O");
+    }
 }
 
 const winConditions = [
