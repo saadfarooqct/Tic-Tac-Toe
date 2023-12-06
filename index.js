@@ -23,9 +23,9 @@ function playerTurn() {
 
 function letterDisplay() {
     if (currentPlayer === playerOne){
-        playerOne === this.getAttribute("X");
+        playerOne.letterDisplay === this.getAttribute("X");
     } else if (currentPlayer = playerTwo){
-        playerTwo === this.getAttribute("O");
+        playerTwo.letterDisplay === this.getAttribute("O");
     }
 }
 
@@ -46,6 +46,15 @@ function winner() {
   } else if (playerTwo === winConditions) {
     return `${playerTwo} has won the game!`;
   }
+}
+
+count = 0
+function scoreBoard(){
+    if (playerOne === winConditions){
+        count += 1;
+    } else if (playerTwo === winConditions){
+        count += 1
+    }
 }
 
 function endGame() {
