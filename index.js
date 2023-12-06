@@ -3,13 +3,14 @@ const playerTwo = "O";
 const statusText = document.querySelector("#statusText");
 const startBtn = document.querySelector("#startBtn");
 const restartBtn = document.querySelector("#restartBtn");
+const box = document.querySelector(".box");
 
 let currentPlayer = playerOne;
 
 let boardState = new Array(3).fill(new Array(3).fill(null));
 
 function initializeGame() {
-  statusText.textContent = `${currentPlayer}'s turn`;
+    statusText.textContent = `${currentPlayer}'s turn`;
 }
 
 function playerTurn() {
@@ -21,7 +22,7 @@ function playerTurn() {
 }
 
 function letterDisplay(){
-    
+
 }
 
 const winConditions = [
@@ -48,3 +49,4 @@ function endGame() {
 }
 startBtn.addEventListener("click", initializeGame);
 restartBtn.addEventListener("click", endGame);
+box.addEventListener("click", letterDisplay);
