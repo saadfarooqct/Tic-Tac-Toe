@@ -53,7 +53,7 @@ function scoreBoard(){
     if (playerOne === winConditions){
         count += 1;
     } else if (playerTwo === winConditions){
-        count += 1
+        count += 1;
     }
 }
 

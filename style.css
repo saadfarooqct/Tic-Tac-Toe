@@ -20,3 +20,11 @@ body{
 #Score{
     text-align: center;
 }
+.x{
+    color: black;
+    font-size: 80px;
+}
+.o{
+    color: black;
+    font-size: 80px;
+}
