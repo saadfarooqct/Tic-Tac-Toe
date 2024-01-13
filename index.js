@@ -48,12 +48,13 @@ function winner() {
   }
 }
 
-Score = 0
+playerOne_score = 0
+playerTwo_score = 0
 function scoreBoard(){
     if (playerOne === winConditions){
-        Score += 1;
+        playerOne_score += 1;
     } else if (playerTwo === winConditions){
-        Score += 1;
+        playerTwo_score += 1;
     }
 }
 
