@@ -16,8 +16,10 @@ function initializeGame() {
 function playerTurn() {
     if (currentPlayer === playerOne) {
         currentPlayer = playerTwo;
+        statusText.textContent = `${playerTwo}'s turn`;
     } else {
         currentPlayer = playerOne;
+        statusText.textContent = `${currentPlayer}'s turn`;
   }
 }
 
@@ -63,21 +65,23 @@ function winner() {
 playerOne_score = 0
 playerTwo_score = 0
 function scoreBoard(){
-    if (playerOne === winConditions){
+    if (playerOne = winConditions){
         playerOne_score += 1;
-    } else if (playerTwo === winConditions){
+    } else if (playerTwo = winConditions){
         playerTwo_score += 1;
     }
 }
 
 function endGame() {
     statusText.textContent = "Game Ended";
-    box.textContent = clearInterval;
 }
 
+function restartGame(){
+    boxIndices = "";
+}
 
 startBtn.addEventListener("click", initializeGame);
-restartBtn.addEventListener("click", endGame);
+restartBtn.addEventListener("click", endGame, restartGame);
 
 for (const box of boxes) {
     box.addEventListener("click", () => letterDisplay(box));

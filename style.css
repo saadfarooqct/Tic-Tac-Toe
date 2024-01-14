@@ -27,6 +27,9 @@ hr{
     margin: auto;
     text-align: center;
 }
-#Score{
+.Score1{
+    text-align: center;
+}
+.Score2{
     text-align: center;
 }
