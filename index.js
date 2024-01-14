@@ -16,8 +16,10 @@ function initializeGame() {
 function playerTurn() {
     if (currentPlayer === playerOne) {
         currentPlayer = playerTwo;
+        statusText.textContent = `${playerTwo}'s turn`;
     } else {
         currentPlayer = playerOne;
+        statusText.textContent = `${currentPlayer}'s turn`;
   }
 }
 
@@ -55,7 +57,6 @@ function winner() {
                 statusText.textContent = "Player one wins"
             } else {
                 statusText.textContent = "Player two wins"
-                running = false;
             }
         }
     }
@@ -80,7 +81,7 @@ function restartGame(){
 }
 
 startBtn.addEventListener("click", initializeGame);
-restartBtn.addEventListener("click", endGame);
+restartBtn.addEventListener("click", endGame,);
 
 for (const box of boxes) {
     box.addEventListener("click", () => letterDisplay(box));
