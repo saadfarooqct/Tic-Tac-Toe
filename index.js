@@ -3,7 +3,7 @@ const playerTwo = "O";
 const statusText = document.querySelector("#statusText");
 const startBtn = document.querySelector("#startBtn");
 const restartBtn = document.querySelector("#restartBtn");
-const box = document.querySelector(".box");
+const boxes = document.querySelectorAll(".box");
 
 let currentPlayer = playerOne;
 
@@ -21,12 +21,14 @@ function playerTurn() {
   }
 }
 
-function letterDisplay() {
+function letterDisplay(box) {
     if (currentPlayer === playerOne){
-        playerOne.letterDisplay === this.getAttribute("X");
+        box.textContent = "X";
     } else if (currentPlayer = playerTwo){
-        playerTwo.letterDisplay === this.getAttribute("O");
+        box.textContent = "O";
     }
+    playerTurn();
+    winner();
 }
 
 const winConditions = [
@@ -41,11 +43,22 @@ const winConditions = [
 ];
 
 function winner() {
-  if (playerOne === winConditions) {
-    return `${playerOne} has won the game!`;
-  } else if (playerTwo === winConditions) {
-    return `${playerTwo} has won the game!`;
-  }
+    for (const boxIndices of winConditions) {
+        const [index1, index2, index3] = boxIndices;
+
+        const box1 = document.querySelector(`div[boxindex="${index1}"]`)
+        const box2 = document.querySelector(`div[boxindex="${index2}"]`)
+        const box3 = document.querySelector(`div[boxindex="${index3}"]`)
+
+        if (box1.textContent === box2.textContent === box3.textContent) {
+            if (box1.textContent === "X") {
+                statusText.textContent = "Player one wins"
+            } else {
+                statusText.textContent = "Player two wins"
+            }
+        }
+    }
+    // game still going
 }
 
 playerOne_score = 0
@@ -61,6 +74,11 @@ function scoreBoard(){
 function endGame() {
     statusText.textContent = "Game Ended";
 }
+
+
 startBtn.addEventListener("click", initializeGame);
 restartBtn.addEventListener("click", endGame);
-box.addEventListener("click", letterDisplay);
+
+for (const box of boxes) {
+    box.addEventListener("click", () => letterDisplay(box));
+}
