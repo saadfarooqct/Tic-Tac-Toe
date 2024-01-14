@@ -77,11 +77,11 @@ function endGame() {
 }
 
 function restartGame(){
-    
+    boxIndices = "";
 }
 
 startBtn.addEventListener("click", initializeGame);
-restartBtn.addEventListener("click", endGame,);
+restartBtn.addEventListener("click", endGame, restartGame);
 
 for (const box of boxes) {
     box.addEventListener("click", () => letterDisplay(box));
