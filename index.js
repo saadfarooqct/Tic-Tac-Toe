@@ -55,6 +55,7 @@ function winner() {
                 statusText.textContent = "Player one wins"
             } else {
                 statusText.textContent = "Player two wins"
+                running = false;
             }
         }
     }
@@ -63,18 +64,20 @@ function winner() {
 playerOne_score = 0
 playerTwo_score = 0
 function scoreBoard(){
-    if (playerOne === winConditions){
+    if (playerOne = winConditions){
         playerOne_score += 1;
-    } else if (playerTwo === winConditions){
+    } else if (playerTwo = winConditions){
         playerTwo_score += 1;
     }
 }
 
 function endGame() {
     statusText.textContent = "Game Ended";
-    box.textContent = clearInterval;
 }
 
+function restartGame(){
+    
+}
 
 startBtn.addEventListener("click", initializeGame);
 restartBtn.addEventListener("click", endGame);
