@@ -58,7 +58,6 @@ function winner() {
             }
         }
     }
-    // game still going
 }
 
 playerOne_score = 0
@@ -73,6 +72,7 @@ function scoreBoard(){
 
 function endGame() {
     statusText.textContent = "Game Ended";
+    box.textContent = clearInterval;
 }
 
 
