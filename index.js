@@ -64,12 +64,9 @@ function winner() {
 
 function Draw(){
     for(const boxIndices of winConditions) {
-        const [index1, index2, index3] = boxIndices;
-
-        const box1 = document.querySelector(`div[boxindex="${index1}"]`)
-        const box2 = document.querySelector(`div[boxindex="${index2}"]`)
-        const box3 = document.querySelector(`div[boxindex="${index3}"]`)
-        statusText.textContent = "The Game is a Draw";
+        if (box1.textContent != box2.textContent != box3.textContent){
+            statusText.textContent = "The Game is a Draw";
+        }        
     }
 }
 
