@@ -62,6 +62,17 @@ function winner() {
     }
 }
 
+function Draw(){
+    for(const boxIndices of winConditions) {
+        const [index1, index2, index3] = boxIndices;
+
+        const box1 = document.querySelector(`div[boxindex="${index1}"]`)
+        const box2 = document.querySelector(`div[boxindex="${index2}"]`)
+        const box3 = document.querySelector(`div[boxindex="${index3}"]`)
+        statusText.textContent = "The Game is a Draw";
+    }
+}
+
 playerOne_score = 0
 playerTwo_score = 0
 function scoreBoard(){
@@ -77,7 +88,7 @@ function endGame() {
 }
 
 function restartGame(){
-    boxIndices = "";
+    winConditions = "";
 }
 
 startBtn.addEventListener("click", initializeGame);
