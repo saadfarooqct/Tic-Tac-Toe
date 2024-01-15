@@ -26,7 +26,7 @@ function playerTurn() {
 function letterDisplay(box) {
     if (currentPlayer === playerOne){
         box.textContent = "X";
-    } else if (currentPlayer = playerTwo){
+    } else if (currentPlayer === playerTwo){
         box.textContent = "O";
     }
     playerTurn();
@@ -63,10 +63,12 @@ function winner() {
 }
 
 function Draw() {
-    if (boxes != winConditions){
+    if (Array.from(boxes).every(box => box.textContent !== "") && !hasWinner()) {
         statusText.textContent = "The Game is a Draw";
     }
-}        
+}
+    
+        
 
 playerOne_score = 0
 playerTwo_score = 0
@@ -82,8 +84,11 @@ function endGame() {
     statusText.textContent = "Game Ended";
 }
 
-function restartGame(){
-    boxes = "";
+function restartGame() {
+    boxes.forEach(box => {
+        box.textContent = "";
+    });
+    initializeGame();
 }
 
 startBtn.addEventListener("click", initializeGame);
