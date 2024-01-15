@@ -49,19 +49,21 @@ function winner() {
     for (const boxIndices of winConditions) {
         const [index1, index2, index3] = boxIndices;
 
-        const box1 = document.querySelector(`div[boxindex="${index1}"]`)
-        const box2 = document.querySelector(`div[boxindex="${index2}"]`)
-        const box3 = document.querySelector(`div[boxindex="${index3}"]`)
+        const box1 = document.querySelector(`div[boxindex="${index1}"]`);
+        const box2 = document.querySelector(`div[boxindex="${index2}"]`);
+        const box3 = document.querySelector(`div[boxindex="${index3}"]`);
 
-        if (box1.textContent === box2.textContent === box3.textContent) {
+        if (box1.textContent === box2.textContent && box2.textContent === box3.textContent) {
             if (box1.textContent === "X") {
-                statusText.textContent = `${currentPlayer} wins!`;
-            } else {
+                statusText.textContent = `${playerOne} wins!`;
+            } else if (box1.textContent === "O") {
                 statusText.textContent = `${playerTwo} wins!`;
             }
         }
     }
 }
+
+
 
 function Draw() {
     if (Array.from(boxes).every(box => box.textContent !== "") && !winner()) {
