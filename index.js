@@ -49,21 +49,30 @@ function winner() {
     for (const boxIndices of winConditions) {
         const [index1, index2, index3] = boxIndices;
 
-        const box1 = document.querySelector(`div[boxindex="${index1}"]`);
-        const box2 = document.querySelector(`div[boxindex="${index2}"]`);
-        const box3 = document.querySelector(`div[boxindex="${index3}"]`);
+        const box1 = document.querySelector(`button[boxindex="${index1}"]`);
+        const box2 = document.querySelector(`button[boxindex="${index2}"]`);
+        const box3 = document.querySelector(`button[boxindex="${index3}"]`);
 
         if (box1.textContent === box2.textContent && box2.textContent === box3.textContent) {
             if (box1.textContent === "X") {
                 statusText.textContent = `${playerOne} wins!`;
+                disableButtons();
+                break;
             } else if (box1.textContent === "O") {
                 statusText.textContent = `${playerTwo} wins!`;
-            }
+                disableButtons();
+                break;
+            }   
         }
     }
 }
 
-
+function disableButtons(disabled = true) {
+    const buttons = document.querySelectorAll("button.box");
+            for(const btn of buttons){
+                btn.disabled = disabled;
+            }
+}
 
 function Draw() {
     if (Array.from(boxes).every(box => box.textContent !== "") && !winner()) {
@@ -92,6 +101,7 @@ function restartGame() {
     initializeGame();
     playerTurn();
     endGame();
+    disableButtons(false);
 }
 
 startBtn.addEventListener("click", initializeGame);
