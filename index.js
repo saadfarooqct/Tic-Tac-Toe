@@ -26,11 +26,12 @@ function playerTurn() {
 function letterDisplay(box) {
     if (currentPlayer === playerOne){
         box.textContent = "X";
-    } else if (currentPlayer = playerTwo){
+    } else if (currentPlayer === playerTwo){
         box.textContent = "O";
     }
     playerTurn();
     winner();
+    Draw();
 }
 
 const winConditions = [
@@ -48,25 +49,27 @@ function winner() {
     for (const boxIndices of winConditions) {
         const [index1, index2, index3] = boxIndices;
 
-        const box1 = document.querySelector(`div[boxindex="${index1}"]`)
-        const box2 = document.querySelector(`div[boxindex="${index2}"]`)
-        const box3 = document.querySelector(`div[boxindex="${index3}"]`)
+        const box1 = document.querySelector(`div[boxindex="${index1}"]`);
+        const box2 = document.querySelector(`div[boxindex="${index2}"]`);
+        const box3 = document.querySelector(`div[boxindex="${index3}"]`);
 
-        if (box1.textContent === box2.textContent === box3.textContent) {
+        if (box1.textContent === box2.textContent && box2.textContent === box3.textContent) {
             if (box1.textContent === "X") {
-                statusText.textContent = `${currentPlayer} wins!`;
-            } else {
+                statusText.textContent = `${playerOne} wins!`;
+            } else if (box1.textContent === "O") {
                 statusText.textContent = `${playerTwo} wins!`;
             }
         }
     }
 }
 
+
+
 function Draw() {
-    if (boxes != winConditions){
-        statusText.textContent = "The Game is a Draw";
+    if (Array.from(boxes).every(box => box.textContent !== "") && !winner()) {
+        statusText.textContent = "The Game is a Draw!";
     }
-}        
+}      
 
 playerOne_score = 0
 playerTwo_score = 0
@@ -82,12 +85,17 @@ function endGame() {
     statusText.textContent = "Game Ended";
 }
 
-function restartGame(){
-    boxes = "";
+function restartGame() {
+    boxes.forEach(box => {
+        box.textContent = "";
+    });
+    initializeGame();
+    playerTurn();
+    endGame();
 }
 
 startBtn.addEventListener("click", initializeGame);
-restartBtn.addEventListener("click", endGame, restartGame);
+restartBtn.addEventListener("click", restartGame, endGame);
 
 for (const box of boxes) {
     box.addEventListener("click", () => letterDisplay(box));
