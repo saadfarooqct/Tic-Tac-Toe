@@ -4,6 +4,8 @@ const statusText = document.querySelector("#statusText");
 const startBtn = document.querySelector("#startBtn");
 const restartBtn = document.querySelector("#restartBtn");
 const boxes = document.querySelectorAll(".box");
+let score1 = document.querySelector("#score1");
+let score2 = document.querySelector("#score2");
 
 let currentPlayer = playerOne;
 
@@ -57,10 +59,12 @@ function winner() {
             if (box1.textContent === "X") {
                 statusText.textContent = `${playerOne} wins!`;
                 disableButtons();
+                scoreBoard();
                 break;
             } else if (box1.textContent === "O") {
                 statusText.textContent = `${playerTwo} wins!`;
                 disableButtons();
+                scoreBoard();
                 break;
             }   
         }
@@ -80,15 +84,14 @@ function Draw() {
     }
 }      
 
-playerOne_score = 0
-playerTwo_score = 0
-function scoreBoard(){
-    if (playerOne = winConditions){
-        playerOne_score += 1;
-    } else if (playerTwo = winConditions){
-        playerTwo_score += 1;
+function scoreBoard() {
+    if (box.textContent === "X") {
+        score1 += 1;
+    } else if (box.textContent === "O") {
+        score2 += 1;
     }
 }
+
 
 function endGame() {
     statusText.textContent = "Game Ended";
