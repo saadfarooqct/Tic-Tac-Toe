@@ -31,6 +31,7 @@ function letterDisplay(box) {
     }
     playerTurn();
     winner();
+    Draw();
 }
 
 const winConditions = [
@@ -63,12 +64,10 @@ function winner() {
 }
 
 function Draw() {
-    if (Array.from(boxes).every(box => box.textContent !== "") && !hasWinner()) {
-        statusText.textContent = "The Game is a Draw";
+    if (Array.from(boxes).every(box => box.textContent !== "") && !winner()) {
+        statusText.textContent = "The Game is a Draw!";
     }
-}
-    
-        
+}      
 
 playerOne_score = 0
 playerTwo_score = 0
