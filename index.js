@@ -10,7 +10,7 @@ let currentPlayer = playerOne;
 let boardState = new Array(3).fill(new Array(3).fill(null));
 
 function initializeGame() {
-    statusText.textContent = `${playerOne}'s turn`;
+    statusText.textContent = `${currentPlayer}'s turn`;
 }
 
 function playerTurn() {
@@ -89,6 +89,7 @@ function restartGame() {
         box.textContent = "";
     });
     initializeGame();
+    playerTurn();
     endGame();
 }
 
