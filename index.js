@@ -92,7 +92,7 @@ function restartGame() {
 }
 
 startBtn.addEventListener("click", initializeGame);
-restartBtn.addEventListener("click", endGame, restartGame);
+restartBtn.addEventListener("click", restartGame, endGame);
 
 for (const box of boxes) {
     box.addEventListener("click", () => letterDisplay(box));
