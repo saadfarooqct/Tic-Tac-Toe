@@ -62,13 +62,11 @@ function winner() {
     }
 }
 
-function Draw(){
-    for(const boxIndices of winConditions) {
-        if (box1.textContent != box2.textContent != box3.textContent){
-            statusText.textContent = "The Game is a Draw";
-        }        
+function Draw() {
+    if (boxes != winConditions){
+        statusText.textContent = "The Game is a Draw";
     }
-}
+}        
 
 playerOne_score = 0
 playerTwo_score = 0
@@ -85,7 +83,7 @@ function endGame() {
 }
 
 function restartGame(){
-    winConditions = "";
+    boxes = "";
 }
 
 startBtn.addEventListener("click", initializeGame);
