@@ -54,13 +54,19 @@ function winner() {
 
         if (box1.textContent === box2.textContent === box3.textContent) {
             if (box1.textContent === "X") {
-                statusText.textContent = "Player one wins"
+                statusText.textContent = `${currentPlayer} wins!`;
             } else {
-                statusText.textContent = "Player two wins"
+                statusText.textContent = `${playerTwo} wins!`;
             }
         }
     }
 }
+
+function Draw() {
+    if (boxes != winConditions){
+        statusText.textContent = "The Game is a Draw";
+    }
+}        
 
 playerOne_score = 0
 playerTwo_score = 0
@@ -77,7 +83,7 @@ function endGame() {
 }
 
 function restartGame(){
-    boxIndices = "";
+    boxes = "";
 }
 
 startBtn.addEventListener("click", initializeGame);
