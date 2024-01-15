@@ -89,6 +89,7 @@ function restartGame() {
         box.textContent = "";
     });
     initializeGame();
+    endGame();
 }
 
 startBtn.addEventListener("click", initializeGame);
