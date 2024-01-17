@@ -84,14 +84,13 @@ function Draw() {
     }
 }      
 
-function scoreBoard() {
+function scoreBoard(score1,score2) {
     if (box.textContent === "X") {
         score1 += 1;
     } else if (box.textContent === "O") {
         score2 += 1;
     }
 }
-
 
 function endGame() {
     statusText.textContent = "Game Ended";
