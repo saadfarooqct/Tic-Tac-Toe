@@ -27,11 +27,10 @@ hr{
     margin: auto;
     text-align: center;
 }
-#PlayerOneScoreDisplay{
-    text-align: center;
+
+.scoreDisplay{
     font-size: 2em;
-}
-#PlayerTwoScoreDisplay{
-    text-align: center;
-    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
 }

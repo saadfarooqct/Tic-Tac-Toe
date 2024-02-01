@@ -1,11 +1,11 @@
 const playerOne = "X";
 const playerTwo = "O";
-const statusText = document.querySelector("#statusText");
-const startBtn = document.querySelector("#startBtn");
-const restartBtn = document.querySelector("#restartBtn");
+const statusText = document.getElementById("statusText");
+const startBtn = document.getElementById("startBtn");
+const restartBtn = document.getElementById("restartBtn");
 const boxes = document.querySelectorAll(".box");
-const PlayerOneScoreDisplay = document.getElementById("#PlayerOneScoreDisplay");
-const PlayerTwoScoreDisplay = document.getElementById("#PlayerTwoScoreDisplay");
+const PlayerOneDisplay = document.getElementById("PlayerOneDisplay");
+const PlayerTwoDisplay = document.getElementById("PlayerTwoDisplay");
 let PlayerOneScore = 0;
 let PlayerTwoScore = 0;
 
@@ -61,12 +61,14 @@ function winner() {
             if (box1.textContent === "X") {
                 statusText.textContent = `${playerOne} wins!`;
                 disableButtons();
-                scoreBoard();
+                PlayerOneScore++;
+                PlayerOneDisplay.textContent = PlayerOneScore;
                 break;
             } else if (box1.textContent === "O") {
                 statusText.textContent = `${playerTwo} wins!`;
                 disableButtons();
-                scoreBoard();
+                PlayerTwoScore++;
+                PlayerTwoDisplay.textContent = PlayerTwoScore;
                 break;
             }   
         }
