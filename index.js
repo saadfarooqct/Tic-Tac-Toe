@@ -4,8 +4,10 @@ const statusText = document.querySelector("#statusText");
 const startBtn = document.querySelector("#startBtn");
 const restartBtn = document.querySelector("#restartBtn");
 const boxes = document.querySelectorAll(".box");
-let score1 = document.querySelector("#score1");
-let score2 = document.querySelector("#score2");
+const PlayerOneScoreDisplay = document.getElementById("#PlayerOneScoreDisplay");
+const PlayerTwoScoreDisplay = document.getElementById("#PlayerTwoScoreDisplay");
+let PlayerOneScore = 0;
+let PlayerTwoScore = 0;
 
 let currentPlayer = playerOne;
 
@@ -83,15 +85,6 @@ function Draw() {
         statusText.textContent = "The Game is a Draw!";
     }
 }      
-
-function scoreBoard() {
-    if (box.textContent === "X") {
-        score1 += 1;
-    } else if (box.textContent === "O") {
-        score2 += 1;
-    }
-}
-
 
 function endGame() {
     statusText.textContent = "Game Ended";

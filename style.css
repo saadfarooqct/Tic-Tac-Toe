@@ -27,9 +27,11 @@ hr{
     margin: auto;
     text-align: center;
 }
-#score1{
+#PlayerOneScoreDisplay{
     text-align: center;
+    font-size: 2em;
 }
-#score2{
+#PlayerTwoScoreDisplay{
     text-align: center;
+    font-size: 2em;
 }
