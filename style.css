@@ -1,5 +1,6 @@
 body{
-    background-color: darksalmon;
+    background: linear-gradient(109.6deg, rgb(148, 233, 194) 11.2%, rgb(224, 235, 186) 91.1%);
+
 }
 hr{
     width: 300px;
