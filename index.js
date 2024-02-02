@@ -28,9 +28,12 @@ function playerTurn() {
 }
 
 function letterDisplay(box) {
+    if (box.textContent !== "") {
+        return;
+    }
     if (currentPlayer === playerOne){
         box.textContent = "X";
-    } else if (currentPlayer === playerTwo){
+    } else if (currentPlayer === playerTwo) {
         box.textContent = "O";
     }
     playerTurn();
